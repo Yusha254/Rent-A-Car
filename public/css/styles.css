@@ -1,0 +1,17 @@
+body {
+    padding-top: 56px; /* Adjust based on your navigation bar height */
+  }
+  .hero-section {
+    text-align: center;
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Adjust the background color */
+  }
+  .hero-button {
+    margin-top: 20px;
+  }
+  .container {
+    margin-top: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }

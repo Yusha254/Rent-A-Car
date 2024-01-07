@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Car - Speedy Rent-A-Car</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Speedy Rent-A-Car</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <!-- Use a form to create a clickable link -->
+          <form action="/car-management" method="get">
+            <button type="submit" class="nav-link btn btn-link">Car Management</button>
+          </form>
+          <form action="/cars" method="get">
+            <button type="submit" class="nav-link btn btn-link">Car List</button>
+          </form>
+        </li>
+        
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Rent Car Page Content -->
+  <div class="container">
+    <h2>Rent Car</h2>
+
+    <!-- Display the selected car ID -->
+    <p>You are renting Car ID: <%= carId %></p>
+
+    <!-- Additional content for renting a car -->
+      <!-- Rental Form -->
+  <form action="/makecontract" method="post">
+    <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+      <label for="startDate">Start Date:</label>
+      <input type="date" class="form-control" id="startDate" name="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" class="form-control" id="endDate" name="endDate" required>
+    </div>
+    <input type="hidden" name="carId" value="<%= carId %>">
+    <button type="submit" class="btn btn-primary">Make Contract</button>
+  </form>
+
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

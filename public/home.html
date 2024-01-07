@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedy Rent-A-Car Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Speedy Rent-A-Car</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <!-- Use a form to create a clickable link -->
+          <form action="/car-management" method="get">
+            <button type="submit" class="nav-link btn btn-link">Car Management</button>
+          </form>
+          <form action="/cars" method="get">
+            <button type="submit" class="nav-link btn btn-link">Car List</button>
+          </form>
+        </li>
+        
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="container-fluid hero-section">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1>Welcome to Speedy Rent-A-Car Services</h1>
+        <p>Your go-to destination for reliable car rentals</p>
+        <img src="images/speedometer-1249610_1280.jpg" alt="Car Image" class="img-fluid" />
+        <a href="#" class="btn btn-primary hero-button">Rent Car</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

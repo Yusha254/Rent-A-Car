@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Management - Speedy Rent-A-Car</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Speedy Rent-A-Car</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Car Management</a>
+        </li>
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Car Management Page Content -->
+  <div class="container">
+    <h2>Car Management</h2>
+
+    <!-- Add New Car Form -->
+    <form action="/addCar" method="post">
+      <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="text" class="form-control" id="id" name="id" placeholder="Enter Car Id" required>
+        <label for="make">Make:</label>
+        <input type="text" class="form-control" id="make" name="make" placeholder="Enter car make" required>
+      </div>
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" class="form-control" id="model" name="model" placeholder="Enter car model" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add New Car</button>
+    </form>
+
+    <hr>
+
+    <!-- Delete Car Form -->
+    <form action="/deleteCar" method="post">
+      <div class="form-group">
+        <label for="deleteCarId">Car ID to Delete:</label>
+        <input type="text" class="form-control" id="deleteCarId" name="deleteCarId" placeholder="Enter car ID" required>
+      </div>
+      <button type="submit" class="btn btn-danger">Delete Car</button>
+    </form>
+
+    <hr>
+
+    <!-- View All Cars -->
+<h3>All Cars in the System</h3>
+<ul class="list-group">
+  <!-- Loop through cars from the server-side and generate list items dynamically -->
+  <% cars.forEach(function(car) { %>
+    <li class="list-group-item">Car ID: <%= car.id %> | Make: <%= car.make %> | Model: <%= car.model %></li>
+  <% }); %>
+</ul>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
